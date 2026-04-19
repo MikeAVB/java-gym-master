@@ -5,8 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
-
 public class TimetableTest {
     private static Timetable timetable;
 
@@ -16,7 +14,7 @@ public class TimetableTest {
     }
 
     @Test
-    void testGetTrainingSessionsForDaySingleSession() {
+    void testGetSessionsForDayOneSession() {
         Group group = new Group("Акробатика для детей", Age.CHILD, 60);
         Coach coach = new Coach("Васильев", "Николай", "Сергеевич");
         TrainingSession singleTrainingSession = new TrainingSession(group, coach,
@@ -31,7 +29,7 @@ public class TimetableTest {
     }
 
     @Test
-    void testGetTrainingSessionsForDayMultipleSessions() {
+    void testGetSessionsForDayFewSessions() {
         Coach coach = new Coach("Васильев", "Николай", "Сергеевич");
 
         Group groupAdult = new Group("Акробатика для взрослых", Age.ADULT, 90);
@@ -65,7 +63,7 @@ public class TimetableTest {
     }
 
     @Test
-    void testGetTrainingSessionsForDayAndTime() {
+    void testGetSessionsForDayAndTime() {
         Group group = new Group("Акробатика для детей", Age.CHILD, 60);
         Coach coach = new Coach("Васильев", "Николай", "Сергеевич");
         TrainingSession singleTrainingSession = new TrainingSession(group, coach,
@@ -80,13 +78,13 @@ public class TimetableTest {
     }
 
     @Test
-    void testGetTrainingCountEmptySessions() {
+    void testGetSessionsCountEmptySessions() {
         //Проверить, что в пустой таблице не вернется ни одного счетчика тренировок
         assertEquals(0, timetable.getCountByCoaches().size());
     }
 
     @Test
-    void testGetTrainingCountIfOneSession() {
+    void testGetSessionsCountIfOneSession() {
         Group group = new Group("Акробатика для детей", Age.CHILD, 60);
         Coach coach = new Coach("Васильев", "Николай", "Сергеевич");
         TrainingSession singleTrainingSession = new TrainingSession(group, coach,
@@ -101,7 +99,7 @@ public class TimetableTest {
     }
 
     @Test
-    void testGetTrainingCountIfMultiplySessions() {
+    void testGetSessionsCountIfFewSessions() {
         Coach coach = new Coach("Васильев", "Николай", "Сергеевич");
 
         Group groupAdult = new Group("Акробатика для взрослых", Age.ADULT, 90);
