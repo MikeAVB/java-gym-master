@@ -30,6 +30,11 @@ public class Coach {
         return Objects.hash(surname, name, middleName);
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s %c. %1c.", surname, name.charAt(0), middleName.charAt(0));
+    }
+
     public String getSurname() {
         return surname;
     }

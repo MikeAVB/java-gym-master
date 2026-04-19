@@ -25,4 +25,9 @@ public class Group {
     public int getDuration() {
         return duration;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Название: %s, возраст: %s, длительность: %d минут.", title, age, duration);
+    }
 }
