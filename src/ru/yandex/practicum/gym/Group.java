@@ -2,11 +2,11 @@ package ru.yandex.practicum.gym;
 
 public class Group {
     //название группы
-    private String title;
+    private final String title;
     //тип (взрослая или детская)
-    private Age age;
+    private final Age age;
     //длительность (в минутах)
-    private int duration;
+    private final int duration;
 
     public Group(String title, Age age, int duration) {
         this.title = title;
@@ -24,5 +24,10 @@ public class Group {
 
     public int getDuration() {
         return duration;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Название: %s, возраст: %s, длительность: %d минут.", title, age, duration);
     }
 }
